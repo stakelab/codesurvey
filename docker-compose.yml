@@ -1,0 +1,30 @@
+version: '2'
+services:
+    codesurvey:
+        build: .
+        restart: always
+        ports:
+            - 8080:8080
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_DATABASE: understandability
+            MYSQL_USER: root
+            MYSQL_PASSWORD: password
+        
+        depends_on:
+            - mysql
+    mysql:
+        build: sql
+        restart: always
+        ports:
+            - 3306:3306
+        volumes:
+            - mysqlscw:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: understandability
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_ROOT_PASSWORD: password
+            
+volumes:
+    mysqlscw:
+        driver: local

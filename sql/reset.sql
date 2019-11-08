@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `answer`;
+DROP TABLE IF EXISTS `assessment`;
+DROP TABLE IF EXISTS `participant`;
+DROP TABLE IF EXISTS `provided_answers`;
+DROP TABLE IF EXISTS `question`;
+DROP TABLE IF EXISTS `snippet`;
+DROP TABLE IF EXISTS `classes`;
+DROP TABLE IF EXISTS `skills`;
